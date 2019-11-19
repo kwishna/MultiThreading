@@ -1,6 +1,5 @@
-package Common;
+package SearchAndDeleteFolders;
 
-import Regex.Regex;
 import org.apache.commons.io.FileDeleteStrategy;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
@@ -23,37 +22,45 @@ public class FileAndFolders {
 	private static final Long twoMonthsBefore = Long.valueOf(LocalDate.now().minusMonths(2).format(DateTimeFormatter.ofPattern("yyyyMMdd")));
 	private static String regex = "";
 
+
 	public static void main(String[] args) {
 
+		// printAllPDFFileInsideFolder(workSpace, twoMonthsBefore);
+		// deleteAllFoldersForMatchingRegex(workSpace, regex);
+
+		// To Print Files With Matching Extensions.
+		List l = (List) FileUtils.listFiles(new File(workSpace), new String[]{"pdf", "txt", "epub"}, true);
+		System.out.println(l.size());
+	}
+
+	public void printAllPDFFileInsideFolder(String workSpace, Long thresholdDate){
+
 		// To Find PDF Files
-/*		FileUtils.listFiles(new File(workSpace), new WildcardFileFilter("*.pdf"), TrueFileFilter.INSTANCE)
-				.parallelStream().filter(f -> f.lastModified() < twoMonthsBefore).collect(Collectors.toList())
+		FileUtils.listFiles(new File(workSpace), new WildcardFileFilter("*.pdf"), TrueFileFilter.INSTANCE)
+				.parallelStream().filter(f -> f.lastModified() < thresholdDate).collect(Collectors.toList())
 				.forEach(System.out::println);
-*/
+	}
+
+	public void deleteAllFoldersForMatchingRegex(String workSpace, String regex){
 
 		// Delete All Folders Inside Workspace With Matching Regex.
-/*		FileUtils.listFilesAndDirs(new File(workSpace), new WildcardFileFilter("*"), TrueFileFilter.INSTANCE) // workspace param
+		FileUtils.listFilesAndDirs(new File(workSpace), new WildcardFileFilter("*"), TrueFileFilter.INSTANCE) // workspace param
 				.parallelStream()
 				.filter(a -> (a.isDirectory() && a.getName().matches(regex))) // regex param
-				.forEach(b -> {
-					Arrays.stream(Objects.requireNonNull(b.listFiles(x -> (getDateOnly(x.getName()) < Long.parseLong(LocalDate.now().minusMonths(2).format(DateTimeFormatter.ofPattern("yyyyMMdd")))
-					))))
-							.forEach(c -> {
-								try {
-									FileDeleteStrategy.FORCE.delete(c);
-								} catch (IOException e) {
-									e.printStackTrace();
-								}
-								System.out.println("Deleted :: " + c.getAbsolutePath());
-							});
-				});
-*/
+				.forEach(b -> Arrays.stream(Objects.requireNonNull(b.listFiles(x -> (getDateOnly(x.getName()) < Long.parseLong(LocalDate.now().minusMonths(2).format(DateTimeFormatter.ofPattern("yyyyMMdd")))
+				))))
+						.forEach(c -> {
+							try {
+								FileDeleteStrategy.FORCE.delete(c);
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							System.out.println("Deleted :: " + c.getAbsolutePath());
+						}));
 
-	// .filter(b -> Objects.requireNonNull(b.listFiles(x -> (getDateOnly(x.getName()) < twoMonthsBefore))).length > 0)
-
-	// To Print Files With Matching Extensions.
-	//	System.out.println(FileUtils.listFiles(new File(workSpace), new String[]{}, true));
 	}
+
+	// Below Code Is For AWS Machine Folder Deletion.
 
 	private static Long getDateOnly(String fileName) {
 
@@ -132,6 +139,7 @@ public class FileAndFolders {
 								try {
 
 									forceDelete(n);
+//									FileDeleteStrategy.FORCE.delete(n);	// Force Delete!
 
 									System.out.println("Deleted -- " + n.getAbsolutePath());
 
@@ -145,7 +153,7 @@ public class FileAndFolders {
 
 		}
 
-		System.out.println("File Doesn't Exist Or Already Deleted! Or, It's Not A Directory. - " + f.getAbsolutePath());
+		System.out.println("File Doesn't Exist Or Already Deleted! - " + f.getAbsolutePath());
 
 	}
 }
