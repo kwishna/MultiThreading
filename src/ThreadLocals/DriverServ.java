@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeDriverService.Builder;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.AbstractDriverOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.service.DriverService;
@@ -19,8 +20,8 @@ import org.openqa.selenium.remote.service.DriverService;
 public class DriverServ {
 
 	public static void main(String[] args) throws IOException {
-			
-		ChromeOptions op = new ChromeOptions()
+
+		var op = new ChromeOptions()
 //				.addArguments("--headless")
 				.addArguments("--incognito")
 				.setAcceptInsecureCerts(true)
