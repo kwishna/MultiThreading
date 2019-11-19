@@ -106,5 +106,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.72" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:pdfbox:2.0.17" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:fontbox:2.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.12.1" level="project" />
   </component>
 </module>

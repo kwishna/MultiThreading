@@ -23,7 +23,7 @@ public class UsingThreadLocal {
 			System.out.println(fut.get());
 		}
 
-		DriverHandlerJava8Onwards.loc.set(""); // Just A Rough Line
+		DriverHandlerJava8Onwards.loc.set(""); // Just A selenium.Rough Line
 		exec.shutdown();
 	}
 }
