@@ -1,0 +1,171 @@
+[1574184787.236][INFO]: Starting ChromeDriver 78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877})
+[1574184787.237][INFO]: Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1574184788.415][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ],
+            "prefs": {
+               "download.default_directory": "F:\\ABD\\GitHub\\MultipleConcepts",
+               "plugins.always_open_pdf_externally": true,
+               "profile.default_content_settings.popups": 0
+            }
+         },
+         "unhandledPromptBehavior": "accept"
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [  ],
+         "extensions": [  ],
+         "prefs": {
+            "download.default_directory": "F:\\ABD\\GitHub\\MultipleConcepts",
+            "plugins.always_open_pdf_externally": true,
+            "profile.default_content_settings.popups": 0
+         }
+      },
+      "unexpectedAlertBehaviour": "accept",
+      "unhandledPromptBehavior": "accept"
+   }
+}
+[1574184788.417][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "F:\\ABD\\GitHub\\MultipleConcepts"
+   },
+   "plugins": {
+      "always_open_pdf_externally": true
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 0,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1574184788.424][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1574184788.430][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --force-fieldtrials --ignore-certificate-errors --load-extension="C:\Users\KRISHN~1\AppData\Local\Temp\scoped_dir9560_1473841379\internal" --log-level=0 --no-first-run --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\KRISHN~1\AppData\Local\Temp\scoped_dir9560_711711961" data:,
+[1574184789.403][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1574184791.408][WARNING]: Timed out connecting to Chrome, retrying...
+[1574184791.424][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1574184793.464][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1574184795.477][WARNING]: Timed out connecting to Chrome, retrying...
+[1574184795.478][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1574184797.537][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "78.0.3904.97",
+      "chrome": {
+         "chromedriverVersion": "78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877})",
+         "userDataDir": "C:\\Users\\KRISHN~1\\AppData\\Local\\Temp\\scoped_dir9560_711711961"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:52346"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows nt",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "accept"
+   },
+   "sessionId": "2c8cdbace88c3a70d11ad7940cbd89f1"
+}
+[1574184797.613][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] COMMAND Navigate {
+   "url": "https://file-examples.com/index.php/sample-documents-download/sample-pdf-download/"
+}
+[1574184797.613][INFO]: Waiting for pending navigations...
+[1574184797.616][INFO]: Done waiting for pending navigations. Status: ok
+[1574184798.546][INFO]: Waiting for pending navigations...
+[1574184801.574][INFO]: Done waiting for pending navigations. Status: ok
+[1574184801.574][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] RESPONSE Navigate
+[1574184801.595][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] COMMAND FindElement {
+   "using": "css selector",
+   "value": ".btn-orange[href*='150k']"
+}
+[1574184801.595][INFO]: Waiting for pending navigations...
+[1574184801.598][INFO]: Done waiting for pending navigations. Status: ok
+[1574184801.629][INFO]: Waiting for pending navigations...
+[1574184801.632][INFO]: Done waiting for pending navigations. Status: ok
+[1574184801.632][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "007fcdbc-4f06-436d-9495-f6e2c035fe41"
+}
+[1574184801.645][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] COMMAND ClickElement {
+   "id": "007fcdbc-4f06-436d-9495-f6e2c035fe41"
+}
+[1574184801.646][INFO]: Waiting for pending navigations...
+[1574184801.648][INFO]: Done waiting for pending navigations. Status: ok
+[1574184801.732][INFO]: Waiting for pending navigations...
+[1574184801.968][INFO]: Done waiting for pending navigations. Status: ok
+[1574184801.968][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] RESPONSE ClickElement
+[1574184816.987][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] COMMAND CloseWindow {
+
+}
+[1574184817.078][INFO]: [2c8cdbace88c3a70d11ad7940cbd89f1] RESPONSE CloseWindow [  ]
