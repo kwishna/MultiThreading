@@ -17,20 +17,20 @@ public class JDK11 {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		ExecutorService executor = Executors.newFixedThreadPool(6);
 		HttpClient httpClient = HttpClient.newBuilder().executor(executor).build();
 		Builder webSocketBuilder = httpClient.newWebSocketBuilder();
 		WebSocket webSocket = webSocketBuilder.buildAsync(URI.create("wss://echo.websocket.org"), new WebSocket.Listener() {
 		    @Override
 		    public void onOpen(WebSocket webSocket) {
-		        
+
 		        webSocket.sendText("This is a message", true);
 		        Listener.super.onOpen(webSocket);
 		    }
 		    @Override
 		    public CompletionStage<?> onText(WebSocket webSocket, CharSequence data, boolean last) {
-		        
+
 		        if(!webSocket.isOutputClosed()) {
 		            webSocket.sendText("This is a message", true);
 		        }
@@ -38,12 +38,12 @@ public class JDK11 {
 		    }
 		    @Override
 		    public CompletionStage<?> onClose(WebSocket webSocket, int statusCode, String reason) {
-		        
+
 		        executor.shutdown();
 		        return Listener.super.onClose(webSocket, statusCode, reason);
 		    }
 		}).join();
-		
+
 		Thread.sleep(1000);
 		webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "ok").thenRun(() -> System.out.println("Send Close"));
 

@@ -62,7 +62,7 @@ public class Client {
 		for (byte b : response2.body()) {
 			System.out.print((char) b);
 
-		
+
 		//	Incorrect Below. To Be Checked.
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://www.google.com")).build();
 
@@ -70,7 +70,7 @@ public class Client {
 					? BodySubscribers.ofFile(Paths.get("/tmp/f")) : BodySubscribers.replacing(Paths.get("/NULL"));
 
 		client.sendAsync(request, bodyHandler).thenApply(HttpResponse::body).thenAccept(System.out::println);
-		
+
 		}
 	}
 }

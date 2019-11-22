@@ -20,13 +20,12 @@ public class FindTextInsideFiles {
 
 	public static void main(String[] args) {
 
-		findTextInFileTypesInWorkSpace(workSpace, "godnaara","pdf");
-
+		findTextInFileTypesInWorkSpace(workSpace, "krishna","*.java");
 	}
 
-	private static void findTextInFileTypesInWorkSpace(String workSpace, String textToFind, String... arg){
+	private static void findTextInFileTypesInWorkSpace(String workSpace, String textToFind, String... wildCardChar){
 
-		FileUtils.listFiles(new File(workSpace), new WildcardFileFilter(arg), TrueFileFilter.INSTANCE)
+		FileUtils.listFiles(new File(workSpace), new WildcardFileFilter(wildCardChar), TrueFileFilter.INSTANCE)
 				.parallelStream().filter(a -> {
 			String allDate = "";
 			try {

@@ -21,7 +21,7 @@ public class DriverServ {
 
 	public static void main(String[] args) throws IOException {
 
-		var op = new ChromeOptions()
+		ChromeOptions op = (ChromeOptions) new ChromeOptions()
 //				.addArguments("--headless")
 				.addArguments("--incognito")
 				.setAcceptInsecureCerts(true)
