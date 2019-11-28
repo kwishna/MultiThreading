@@ -16,11 +16,12 @@ import java.util.List;
  */
 public class FindTextInsideFiles {
 
-	private static final String workSpace = "F:\\ABD\\Codes";
+	private static final String workSpace = "F:\\ABD\\GitHub";
 
 	public static void main(String[] args) {
 
-		findTextInFileTypesInWorkSpace(workSpace, "krishna","*.java");
+//		findTextInFileTypesInWorkSpace(workSpace, "krishna","*.java");
+		findTextInThisWorkSpace(workSpace, "jbehave");
 	}
 
 	private static void findTextInFileTypesInWorkSpace(String workSpace, String textToFind, String... wildCardChar){
@@ -37,7 +38,7 @@ public class FindTextInsideFiles {
 		}).forEach(x -> System.out.println(x.getAbsolutePath()));
 	}
 
-	public static void findTextInThisWorkSpace(String workSpace, String textToFind) {
+	private static void findTextInThisWorkSpace(String workSpace, String textToFind) {
 
 		List<File> l = (List<File>) FileUtils.listFiles(new File(workSpace), new String[]{"java", "properties"}, true);
 		l.parallelStream().filter(a -> {
@@ -48,6 +49,22 @@ public class FindTextInsideFiles {
 				System.err.println("Error Here : " + a.getAbsolutePath());
 			}
 			return allDate.toLowerCase().contains(textToFind.toLowerCase());
+		}).forEach(x -> System.out.println(x.getAbsolutePath()));
+	}
+
+	private static void findTextInThisWorkSpaceUsingRegex(String workSpace, String regex, String... fileExtensions) {
+
+		if(fileExtensions.length == 0) fileExtensions = new String[]{"java", "properties"};
+
+		List<File> l = (List<File>) FileUtils.listFiles(new File(workSpace), fileExtensions, true);
+		l.parallelStream().filter(a -> {
+			String allData = "";
+			try {
+				allData = Files.readString(a.toPath());
+			} catch (IOException e) {
+				System.err.println("Error Here : " + a.getAbsolutePath());
+			}
+			return allData.toLowerCase().matches(regex);
 		}).forEach(x -> System.out.println(x.getAbsolutePath()));
 	}
 }
