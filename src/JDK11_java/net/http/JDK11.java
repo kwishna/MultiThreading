@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 public class JDK11 {
 
 	/**
+	 * Proxy-Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
 	 * Copied!
 	 * @param args
 	 * @throws InterruptedException
