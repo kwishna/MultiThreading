@@ -3,7 +3,6 @@ package selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.locators.RelativeLocator;
 
 public class Selenium4RelativeLocs {
 
@@ -16,7 +15,7 @@ public class Selenium4RelativeLocs {
 		driver.manage().window().fullscreen();
 		driver.get("https://www.facebook.com");
 		Thread.sleep(5000);
-		driver.findElement(RelativeLocator.withTagName("input").toLeftOf(fbLastName)).sendKeys("HelloWorld");
+//		driver.findElement(RelativeLocator.withTagName("input").toLeftOf(fbLastName)).sendKeys("HelloWorld");
 
 	}
 }
