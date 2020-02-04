@@ -4,7 +4,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class JavaAtomic {
 
-    public static void main(String[] args) throws InterruptedException {
+    int i = 0;
+    static int j = 0;
+
+    public void nonStatic(){ // Non Static Method Can Access Both Static And Non Static Variable.
+        System.out.println(i);
+        System.out.println(j);
+    }
+
+    public static void main(String[] args) throws InterruptedException { // Static Method Can Access Only static Member.
+        System.out.println(new JavaAtomic().i);
+        System.out.println(j);
 
         ProcessingThread pt = new ProcessingThread();
         Thread t1 = new Thread(pt, "t1");
@@ -18,6 +28,7 @@ public class JavaAtomic {
 }
 
 class ProcessingThread implements Runnable {
+
     private AtomicInteger count = new AtomicInteger();
 
     @Override
@@ -33,8 +44,9 @@ class ProcessingThread implements Runnable {
     }
 
     private void processSomething(int i) {
-        // processing some job
-	System.out.println("Printing "+i+":::"+Thread.currentThread());
+    // processing some job
+	System.out.println("Printing "+i+" ::: "+Thread.currentThread());
+
         try {
             Thread.sleep(i * 1000);
         } catch (InterruptedException e) {

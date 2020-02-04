@@ -17,8 +17,8 @@ public class WinAppDriverTest {
 	public static void setup() {
 		try {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability("app", "Microsoft.WindowswinApp_10.1910.0.0_x64__8wekyb3d8bbwe");
-			winAppSession = new WindowsDriver<WindowsElement>(new URL("http://127.0.0.1:4723"), capabilities);
+			capabilities.setCapability("app", "C:\\Program Files\\Notepad++\\notepad++.exe");
+			winAppSession = new WindowsDriver<>(new URL("http://127.0.0.1:4723"), capabilities);
 			winAppSession.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
 			winAppResult = winAppSession.findElementByAccessibilityId("winAppResults");

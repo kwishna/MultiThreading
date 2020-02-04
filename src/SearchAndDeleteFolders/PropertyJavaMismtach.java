@@ -106,9 +106,9 @@ public class PropertyJavaMismtach {
 
 		public static void main(String[] args) throws IOException {
 
-			String propertyFile = System.getProperty("user.dir")+"\\src\\main\\resources\\ModuleSuite\\NA\\MobPage.properties";
+			String propertyFile = System.getProperty("user.dir")+"\\src\\main\\resources\\MobPage.properties";
 
-			String javaPage = System.getProperty("user.dir")+"\\src\\main\\java\\com\\wipro\\dias\\mobpages\\ProductDetailsMobPage.java";
+			String javaPage = System.getProperty("user.dir")+"\\src\\main\\java\\com\\MobPage.java";
 
 			printIfNotFoundInProperties(propertyFile, getMeAllLocatorsUsedInPage(javaPage));
 

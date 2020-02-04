@@ -9,7 +9,7 @@ public class FileFinder {
 
 	public static void findTextInThisWorkSpace(String workSpace, String textToFind) {
 
-		List<File> l = (List<File>) FileUtils.listFiles(new File(workSpace), new String[]{"java"}, true);
+		List<File> l = (List<File>) FileUtils.listFiles(new File(workSpace), new String[]{"java", "properties", "xml"}, true);
 		l.parallelStream().filter(a -> {
 			String allData = "";
 			try {
@@ -22,6 +22,6 @@ public class FileFinder {
 	}
 
 	public static void main(String[] args) {
-		findTextInThisWorkSpace("F:\\ABD", "opencsv");
+		findTextInThisWorkSpace("E:\\Bhole_Nath\\Eclipse_WorkSpace", "wipro");
 	}
 }

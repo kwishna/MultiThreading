@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-13">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-13.0.1">
 		<attributes>
 			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -12,13 +12,13 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="E:/All Jar Files/Apache-Commons/IO/commons-io-2.6.jar"/>
-	<classpathentry kind="lib" path="E:/All Jar Files/Json/Gson/gson-2.8.5.jar"/>
-	<classpathentry kind="lib" path="E:/All Jar Files/Json/json-simple-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/lib/Jar Files/Gson/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="E:/lib/Jar Files/Apache-Commons/IO/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="E:/lib/Jar Files/Json/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

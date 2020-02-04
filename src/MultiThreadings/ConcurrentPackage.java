@@ -30,7 +30,6 @@ public class ConcurrentPackage {
 		servic.execute(() -> System.out.println("Kumar :: "+Thread.currentThread().getName()));
 		System.out.println("Singh :: "+Thread.currentThread().getName());
 		
-		
 		// Submit - Asynchronous
 		ExecutorService service = Executors.newFixedThreadPool(1); // Thread Pool Size 1
 		

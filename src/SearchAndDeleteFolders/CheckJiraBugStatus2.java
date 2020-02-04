@@ -134,11 +134,11 @@ public class CheckJiraBugStatus2 {
 
 		}
 
-		getSetOfVFDPId(builder);
+		getSetOfId(builder);
 
 	}
 
-	private static void getSetOfVFDPId(StringBuilder str) {
+	private static void getSetOfId(StringBuilder str) {
 
 		String regexForId = "([0-9]{5})";
 
