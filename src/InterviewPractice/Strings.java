@@ -1,13 +1,12 @@
 package InterviewPractice;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Strings { // Sort An String.
 
 	public static boolean isAnagram(String one, String two) {
+
 		char[] arrOne = one.toCharArray();
 		char[] arrTwo = two.toCharArray();
 		Arrays.sort(arrOne);
@@ -66,10 +65,6 @@ public class Strings { // Sort An String.
 		return new String(c);
 	}
 
-	public static void printAllpermutation(String input){
-		permutation("", input);
-	}
-
 	private static void permutation(String perm, String word) {
 		if (word.isEmpty()) {
 			System.err.println(perm + word);
@@ -83,11 +78,59 @@ public class Strings { // Sort An String.
 	}
 
 	public static void main(String[] args) {
-		System.out.println(isAnagram("krishna", "rikhans"));
-		System.out.println(removeDuplicates("krisdfsdfsdfsdfashna"));
-		System.out.println(reverseStringOnPlace("My Name Is Krishna Kumar Singh"));
-		printAllpermutation("1234");
+//		System.out.println(isAnagram("krishna", "rikhans"));
+//		System.out.println(removeDuplicates("krisdfsdfsdfsdfashna"));
+//		System.out.println(reverseStringOnPlace("My Name Is Krishna Kumar Singh"));
+//		printAllpermutation("1234");
+//		perm("", "ABCD");
+		allSubSets("ABC".toCharArray());
+		System.out.println(3&2);
 	}
 
+
+	private static void perm(String perm, String text){
+
+		if (text.isEmpty()){
+			System.out.println(perm+text);
+		}
+		else{
+			for (int i = 0; i < text.length(); i++) {
+				String part1 = perm + text.charAt(i);
+				String part2 = text.substring(0, i) + text.substring(i+1);
+				perm(part1, part2);
+			}
+		}
+	}
+
+	/*
+	All Subsets
+	 */
+	private static void allSubSets(char[] arr){ // All Combinations
+		/**
+		 * 1 << 2 = 1*2^2 = 4
+		 * 1 >> 2 = 1/2^2 = 1/4
+		 */
+		for (int i = 0; i < (1 << arr.length); i++) {
+			List<Character> l = new ArrayList<>();
+			for (int j = 0; j < arr.length; j++) {
+				if ((i & (1 << j)) > 0){ //if ((a < 0) && (b < 0) == if ((a & b) < 0) // Might Be
+					l.add(arr[j]);
+				}
+			}
+
+			perm("", l.stream().map(String::valueOf).collect(Collectors.joining()));
+		}
+	}
+
+	static void permutingArray(java.util.List<Integer> arrayList, int element) {
+		for (int i = element; i < arrayList.size(); i++) {
+			java.util.Collections.swap(arrayList, i, element);
+			permutingArray(arrayList, element + 1);
+			java.util.Collections.swap(arrayList, element, i);
+		}
+		if (element == arrayList.size() - 1) {
+			System.out.println(java.util.Arrays.toString(arrayList.toArray()));
+		}
+	}
 
 }

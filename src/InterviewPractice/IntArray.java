@@ -104,28 +104,6 @@ public class IntArray {
 		return arr;
 	}
 
-	static void print3largest(int[] arr) {
-
-		int i, first, second, third;
-		third = first = second = Integer.MIN_VALUE;
-
-		for (i = 0; i < arr.length; i++) {
-			if (arr[i] > first) {
-				third = second;
-				second = first;
-				first = arr[i];
-			}
-			else if (arr[i] > second) {
-				third = second;
-				second = arr[i];
-			}
-			else if (arr[i] > third)
-				third = arr[i];
-		}
-		System.out.println("Three largest elements are " +
-				first + " " + second + " " + third);
-	}
-
 	private static void printDuplicates(int[] arr){
 		int arrLength = arr.length;
 		for (int i = 0; i < arrLength-1; i++) {
@@ -140,15 +118,15 @@ public class IntArray {
 	private static void printDuplicatesInLessIteration(int[] arr){
 		Arrays.sort(arr);
 		int arrLength = arr.length;
-		int k = 0;
+//		int k = 0;
 		for (int i = 0; i < arrLength-1; i++) {
 			if(arr[i] + arr[i+1] == arr[i]*2){
-				k++;
+//				k++;
 				System.out.println("Duplicate Found : "+arr[i]);
 				i++;
 			}
 		}
-		System.out.println(k + " - Iterations");
+//		System.out.println(k + " - Iterations");
 	}
 
 	public static boolean isBinary(int number) {
@@ -175,7 +153,7 @@ public class IntArray {
 
 	private static int[] removeDups(int[] arr){ // If Array Is Sorted, Then Duplicate Elements Will Be Together.
 												// In This Case, We Will Put Elements One By One In A Temp Array.
-												// If Previousn Element Inserted In Arrays Matches The To Be Inserted Element. Then Duplicate Found.
+												// If Previous Element Inserted In Arrays Matches The To Be Inserted Element. Then Duplicate Found.
 		Arrays.sort(arr);
 		int arrLength = arr.length;
 		int index = 0;
@@ -193,13 +171,13 @@ public class IntArray {
 		return noDupArr;
 	}
 
-	public static void printPairsUsingSetWhichSumMatches(int[] numbers, int n){ // Important
+	public static void printPairsUsingSetWhichSumMatches(int[] numbers, int sum){ // Important
 		if(numbers.length < 2){
 			return;
 		}
 		Set<Integer> set = new HashSet<>(numbers.length);
 		for(int value : numbers){
-			int target = n - value;
+			int target = sum - value;
 			if(!set.contains(target)){
 				set.add(value);
 			}else {
@@ -314,7 +292,6 @@ public class IntArray {
 		printPairsUsingSetWhichSumMatches(num,15);
 		System.out.println(Arrays.toString(bubbleSort(num)));
 		printDuplicatesInLessIteration(num);
-		print3largest(num);
 		System.out.println(maximum(new int[]{1, 2, 3, 4, 5}));
 	}
 }
