@@ -124,6 +124,8 @@ public class MeanMinusMedian {
 					max = Math.abs(diffBetweenMeanMedian);
 				}
 
+				System.out.println("Mean - "+average+", Median - "+median+", Difference - "+diffBetweenMeanMedian+", List - "+lis);
+
 				map.put(diffBetweenMeanMedian, lis);
 			}
 		}
@@ -136,7 +138,8 @@ public class MeanMinusMedian {
 //		printAllSubsets(new int[]{1, 2, 2, 3, 3});
 //		printTheMax(new int[][]{{1, 3}, {2, 5},{2, 4}, {3, 5}});
 //		printTheMax(new int[][]{{1, 7}, {2, 4},{6, 9}, {3, 8}, {5, 10}});
-		System.out.println(fun(new int[][]{{1, 2}, {4, 5},{6, 9}, {3, 8}}, 4, 2));
-		printTheMax(new int[][]{{1, 2}, {4, 5}, {6, 9}, {3, 8}});
+//		System.out.println(fun(new int[][]{{1, 2}, {4, 5},{6, 9}, {3, 8}}, 4, 2));
+//		printTheMax(new int[][]{{1, 2}, {4, 5}, {6, 9}, {3, 8}});
+		printAllSubsets(new int[]{1, 2, 3, 4});
 	}
 }

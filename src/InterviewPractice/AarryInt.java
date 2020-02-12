@@ -2,7 +2,7 @@ package InterviewPractice;
 
 import java.util.*;
 
-public class IntArray {
+public class AarryInt {
 
 	public static int maximum(int[] arr) {
 
