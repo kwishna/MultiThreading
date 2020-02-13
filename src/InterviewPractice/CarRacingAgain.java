@@ -68,4 +68,9 @@ public class CarRacingAgain {
 		System.out.println(i);
 //		Assert.assertEquals(4, i);
 	}
+
+	public static void main(String[] args) {
+		System.out.println(maxNumberOfRacers(4, new int[][]{{1,3}, {2, 5}, {2, 4}, {3, 5}}));
+		int[][] x = {{1,3}, {2, 5}, {2, 4}, {3, 5}};
+	}
 }

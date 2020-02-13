@@ -38,7 +38,7 @@ public class DishesProblemAgain {
 
 		@Test
 	public void meanMedianOne(){
-		int max = DishesProblemAgain.maxCoeff(5, new int[]{-1, -9, 0, 5, -7});
+		int max = maxCoeff(5, new int[]{-1, -9, 0, 5, -7});
 		System.out.println(max);
 		Assert.assertEquals(14, max);
 	}
