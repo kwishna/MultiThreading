@@ -8,6 +8,7 @@
 
 	<properties>
 		<maven.compiler.release>11</maven.compiler.release>
+		<mainClass/>
 	</properties>
 
 	<dependencies>
@@ -176,17 +177,18 @@
 						</goals>
 					</execution>
 				</executions>
-				<!--<configuration>
+				<configuration>
 					<executable>maven</executable>
 					<workingDirectory>/target</workingDirectory>
-					<arguments>
+					<!--<arguments>
 						<argument>-X</argument>
 						<argument>myproject:dist</argument>
-					</arguments>
+					</arguments>-->
+					<mainClass>${mainClass}</mainClass>
 					<environmentVariables>
 						<LANG>en_US</LANG>
 					</environmentVariables>
-				</configuration>-->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
