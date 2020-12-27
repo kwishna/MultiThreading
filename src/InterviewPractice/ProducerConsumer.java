@@ -45,8 +45,8 @@ public class ProducerConsumer {
 		 * yield() :- Give Chance To Another Waiting Thread By Releasing Locks Current Held With It.
 		 * sleep() :- Pause The Execution For Provided Duration.
 		 * wait() :- Wait Until Some Other Thread Notifies.
-		 * notify :- Notify Arbitrary Any One Of The Waiting Thread Who Is Waiting For Lock On Locked(synchronized) Object To Wake Up.
-		 * notifyAll :- Notify All Waiting Thread Who Are Waiting For Lock On Locked(synchronized) Object To Wake Up.
+		 * notify() :- Notify Arbitrary Any One Of The Waiting Thread Who Is Waiting For Lock On Locked(synchronized) Object To Wake Up.
+		 * notifyAll() :- Notify All Waiting Thread Who Are Waiting For Lock On Locked(synchronized) Object To Wake Up.
 		 */
 
 		t1.notify();
