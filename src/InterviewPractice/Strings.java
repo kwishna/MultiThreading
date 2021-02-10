@@ -33,6 +33,15 @@ public class Strings { // Sort An String.
 			}
 		}
 		return withoutDup;
+
+		/*
+			StringBuilder builder = new StringBuilder();
+			s.chars().distinct().forEach(c -> builder.append((char) c));
+		 */
+
+		/*
+		Arrays.stream(s.split("")).distinct().collect(Collectors.joining(""))
+		 */
 	}
 
 	public static boolean checkDuplicateUsingSet(String[] input) {
@@ -54,7 +63,7 @@ public class Strings { // Sort An String.
 	private static String reverseStringOnPlace(String word) {
 		char[] c = new char[word.length()];
 		int j = word.length();
-		for (int i = 0; i < word.length()/2; i++) {
+		for (int i = 0; i < word.length() / 2; i++) {
 			if (i < j) {
 				int frontChar = word.charAt(i);
 				int endChar = word.charAt(--j);
@@ -71,7 +80,7 @@ public class Strings { // Sort An String.
 		} else {
 			for (int i = 0; i < word.length(); i++) {
 				String text1 = perm + word.charAt(i);
-				String text2 = word.substring(0, i) + word.substring(i + 1, word.length());
+				String text2 = word.substring(0, i) + word.substring(i + 1);
 				permutation(text1, text2);
 			}
 		}
@@ -84,19 +93,18 @@ public class Strings { // Sort An String.
 //		printAllpermutation("1234");
 //		perm("", "ABCD");
 		allSubSets("ABC".toCharArray());
-		System.out.println(3&2);
+		System.out.println(3 & 2);
 	}
 
 
-	private static void perm(String perm, String text){
+	private static void perm(String perm, String text) {
 
-		if (text.isEmpty()){
-			System.out.println(perm+text);
-		}
-		else{
+		if (text.isEmpty()) {
+			System.out.println(perm + text);
+		} else {
 			for (int i = 0; i < text.length(); i++) {
 				String part1 = perm + text.charAt(i);
-				String part2 = text.substring(0, i) + text.substring(i+1);
+				String part2 = text.substring(0, i) + text.substring(i + 1);
 				perm(part1, part2);
 			}
 		}
@@ -105,7 +113,7 @@ public class Strings { // Sort An String.
 	/*
 	All Subsets
 	 */
-	private static void allSubSets(char[] arr){ // All Combinations
+	private static void allSubSets(char[] arr) { // All Combinations
 		/**
 		 * 1 << 2 = 1*2^2 = 4
 		 * 1 >> 2 = 1/2^2 = 1/4
@@ -113,7 +121,7 @@ public class Strings { // Sort An String.
 		for (int i = 0; i < (1 << arr.length); i++) {
 			List<Character> l = new ArrayList<>();
 			for (int j = 0; j < arr.length; j++) {
-				if ((i & (1 << j)) > 0){ //if ((a < 0) && (b < 0) == if ((a & b) < 0) // Might Be
+				if ((i & (1 << j)) > 0) { //if ((a < 0) && (b < 0) == if ((a & b) < 0) // Might Be
 					l.add(arr[j]);
 				}
 			}

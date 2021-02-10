@@ -1,5 +1,9 @@
 package InterviewPractice;
 
+import java.util.Comparator;
+import java.util.Optional;
+import java.util.stream.Stream;
+
 public class Rough {
 
 	@Override
@@ -103,5 +107,9 @@ public class Rough {
 	public static void main(String[] args) {
 		int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
 		maxValue(arr);
+		Optional<Integer> i = Stream.of(1, 2, 3, 4, 5).min(Comparator.naturalOrder());
+		System.out.println(i.get());
+		System.out.println(Stream.of(1, 2, 3, 4, 5).reduce(Integer::sum).get());
+
 	}
 }

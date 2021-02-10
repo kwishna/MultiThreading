@@ -10,7 +10,7 @@ public class Reader {
 	public static void main(String[] args) {
 		try {
 			String fileName = FileUtils.readFileToString(new File(SystemUtils.getUserDir()+"/read.txt"), "UTF-8");
-			String cmd = "@ECHO OFF\ncd %~dp0\nmvn exec:java -Dexec.mainClass=\"jenkins."+fileName+"\"\n"+
+			String cmd = "@ECHO OFF\ncd %~dp0\nmvn exec:java -Dexec.mainClass=\"jenkins.ClassName"+fileName+"\"\n"+
 					"echo ---- COPY FOLDERS ----\n" +
 					"cd %projectDir%\n" +
 					"IF NOT EXIST TEST_RESULTS MD TEST_RESULTS\n" +

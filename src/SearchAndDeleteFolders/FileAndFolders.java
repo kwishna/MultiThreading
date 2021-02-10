@@ -1,6 +1,5 @@
 package SearchAndDeleteFolders;
 
-import org.apache.commons.io.FileDeleteStrategy;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
@@ -27,12 +26,18 @@ public class FileAndFolders {
 		// printAllPDFFileInsideFolder(workSpace, twoMonthsBefore);
 		// deleteAllFoldersForMatchingRegex(workSpace, regex);
 
+		findFilesWithMatchingExtension("E:\\Bhole_Nath\\Eclipse_WorkSpace", new String[]{"robot"});
 
 	}
 
-	public static List<File> findFilesWithMatchingExtension(String... s){
+	public static List<File> findFilesWithMatchingExtension(String... extensions){
 		// To Print Files With Matching Extensions.
 		return (List<File>) FileUtils.listFiles(new File(workSpace), new String[]{"pdf", "txt", "epub"}, true);
+	}
+
+	public static void findFilesWithMatchingExtension(String workSpaces, String... extensions){
+		// To Print Files With Matching Extensions.
+		FileUtils.listFiles(new File(workSpaces), extensions, true).forEach(System.out::println);
 	}
 
 	public static void printAllPDFFileInsideFolder(String workSpace, Long thresholdDate){

@@ -13,7 +13,7 @@ node('master'){
             else {
                 bat("""
                         cd ${WORKSPACE}
-                        CALL mvn clean compile exec:java -DmainClass="jenkins.Main"
+                        CALL mvn clean compile exec:java -DmainClass="Main"
                         CALL file_backup.bat
                     """)
             }

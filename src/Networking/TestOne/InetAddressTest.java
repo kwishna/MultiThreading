@@ -7,7 +7,7 @@ public class InetAddressTest {
 
 	public static void main(String[] args) throws UnknownHostException {
 		
-		InetAddress[] inet = InetAddress.getAllByName("www.pdfdrive.com");
+		InetAddress[] inet = InetAddress.getAllByName("www.google.com");
 		
 		for(InetAddress a : inet) {
 				
