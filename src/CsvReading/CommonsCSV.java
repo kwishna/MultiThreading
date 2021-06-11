@@ -24,7 +24,7 @@ public class CommonsCSV {
 
 	public static final String fileLocation = System.getProperty("user.dir")+"/src/CsvReading/csvFile.csv";
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 
 		Reader r = Files.newBufferedReader(Path.of(fileLocation));
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader("name","rollNo","location").parse(r);

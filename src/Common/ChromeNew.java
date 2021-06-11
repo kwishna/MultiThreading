@@ -1,14 +1,16 @@
 package Common;
 
 import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+//import org.openqa.selenium.WindowType;
 
 public class ChromeNew {
 
 	public static void main(String[] args) {
 
 		WebDriver driver = new ChromeDriver();
+
 		driver.get("https://www.google.co.in");
 		driver.get("https://www.google.co.fr");
 		driver.navigate().to("https://www.google.co.pt");

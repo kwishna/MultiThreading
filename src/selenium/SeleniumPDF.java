@@ -1,7 +1,6 @@
 package selenium;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.By;
