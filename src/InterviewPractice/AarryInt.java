@@ -228,7 +228,7 @@ public class AarryInt {
 		throw new RuntimeException("Undefined behaviour");
 	}
 
-	private static void commonIn3Arrays(int ar1[], int ar2[], int ar3[]) {
+	private static void commonIn3Arrays(int[] ar1, int[] ar2, int[] ar3) {
 		// Initialize starting indexes for ar1[], ar2[] and ar3[]
 		int i = 0, j = 0, k = 0;
 
